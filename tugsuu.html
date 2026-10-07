@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tursun Udriin Mend!</title>
+  <!-- Confetti animation library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Card Box */
+    .card-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+      border: 3px solid #fff;
+    }
+
+    h1 {
+      color: #ff4757;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 0px #ffeaa7;
+    }
+
+    p {
+      color: #485460;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn-celebrate {
+      background: #ff6b81;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(255, 107, 129, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-celebrate:hover {
+      background: #ff4757;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 20px rgba(255, 107, 129, 0.6);
+    }
+
+    /* Floating Stickers */
+    .sticker {
+      position: absolute;
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+      animation: float 4s ease-in-out infinite;
+      user-select: none;
+      z-index: 5;
+    }
+
+    /* Sticker Positions & Animations */
+    .sticker-1 { top: 5%; left: 5%; animation-delay: 0s; }
+    .sticker-2 { top: 5%; right: 5%; animation-delay: 0.5s; }
+    .sticker-3 { top: 40%; left: 2%; animation-delay: 1s; }
+    .sticker-4 { top: 40%; right: 2%; animation-delay: 1.5s; }
+    .sticker-5 { bottom: 5%; left: 8%; animation-delay: 2s; }
+    .sticker-6 { bottom: 5%; right: 8%; animation-delay: 2.5s; }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+
+    /* Responsive adjustment */
+    @media (max-width: 768px) {
+      .sticker {
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticker Zurguud (Ene hesegt ooriin zurguudyn zam/URL-iig oruulna) -->
+  <img src="837494012_1611483493852836_5250070181093305977_n.png" class="sticker sticker-1" alt="Puppy with cake" />
+  <img src="836258466_1079675634858158_8436385377347472767_n.png" class="sticker sticker-2" alt="Monkey with flowers" />
+  <img src="834271826_2968424820193416_2144558570808010130_n.png" class="sticker sticker-3" alt="Cute cat" />
+  <img src="837494012_1611483493852836_5250070181093305977_n.png" class="sticker sticker-4" alt="Hamster" />
+  <img src="836258466_1079675634858158_8436385377347472767_n.png" class="sticker sticker-5" alt="Chihuahua" />
+  <img src="834271826_2968424820193416_2144558570808010130_n.png" class="sticker sticker-6" alt="Cat with cake" />
+
+  <!-- Mendchilgeenii Card -->
+  <div class="card-container">
+    <h1>🎉 Tursun Udriin Mend! 🎂</h1>
+    <p>Hamygiin hoorhon, engiin bish tusgai udriin mend hurgeye! Oron zait husel muroodol bolgon ni biyelj, ayllar dund huzuugui bayar hooroo duuren baih boltugai! ✨</p>
+    <button class="btn-celebrate" onclick="fireConfetti()">Bayar Hurgeye! 🎈</button>
+  </div>
+
+  <script>
+    // Confetti Effect
+    function fireConfetti() {
+      // Baruu, zun talaas zereglej tsuvrah confetti
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Huudas achagdahed avtomat confetti
+    window.onload = () => {
+      setTimeout(fireConfetti, 500);
+    };
+  </script>
+</body>
+</html>
